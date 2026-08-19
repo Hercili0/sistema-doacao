@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Categoria - Estoque Solidário</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- MENU SUPERIOR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success mb-4 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Estoque Solidário</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link text-white" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-link text-white" href="{{ url_for('sobre') }}">Sobre Nós</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO: ESCOLHA DA CATEGORIA -->
+    <div class="container my-auto py-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <h2 class="fw-bold text-success mb-3">O que você deseja doar?</h2>
+                <p class="text-muted mb-5">Selecione a categoria abaixo para preencher os dados corretos da sua doação.</p>
+                
+                <div class="row g-4">
+                    <!-- Card Alimento -->
+                    <div class="col-md-4">
+                        <a href="{{ url_for('doacoes.doar', categoria='Alimento') }}" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 py-4 px-3 hover-card bg-white">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold text-dark">🍎 Alimentos</h3>
+                                    <p class="card-text text-muted small mt-2">Arroz, feijão, leite, enlatados e perecíveis.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Card Roupa / Agasalho -->
+                    <div class="col-md-4">
+                        <a href="{{ url_for('doacoes.doar', categoria='Roupa') }}" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 py-4 px-3 hover-card bg-white">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold text-dark">🧥 Agasalhos</h3>
+                                    <p class="card-text text-muted small mt-2">Roupas de frio, casacos, cobertores e calçados.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Card Utensilio -->
+                    <div class="col-md-4">
+                        <a href="{{ url_for('doacoes.doar', categoria='Utensilio') }}" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 py-4 px-3 hover-card bg-white">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold text-dark">🪑 Utensílios</h3>
+                                    <p class="card-text text-muted small mt-2">Móveis, eletrodomésticos e utilidades para casa.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary rounded-pill px-4">Voltar para a Página Inicial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="text-center py-4 text-muted bg-white mt-auto border-top">
+        <p class="mb-0">&copy; 2026 Estoque Solidário - Unindo forças contra a fome.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
